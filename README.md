@@ -11,7 +11,7 @@ Links
 - Contact  info@saulburgos.com
 - [My Blog](http://webmasternoob.blogspot.com/)
 
-Github page links
+Practice links
 -------------
 
 - [Basic Service worker](https://saulburgos.github.io/practices/2017/servicesworker/basic/first.html)
