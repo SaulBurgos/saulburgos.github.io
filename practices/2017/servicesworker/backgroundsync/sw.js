@@ -5,7 +5,8 @@
 
 
 function fetchDogImage () {
- fetch('https://images-na.ssl-images-amazon.com/images/G/01/img15/pet-products/small-tiles/23695_pets_vertical_store_dogs_small_tile_8._CB312176604_.jpg')
+   console.log('request pending in progress');
+   fetch('https://images-na.ssl-images-amazon.com/images/G/01/img15/pet-products/small-tiles/23695_pets_vertical_store_dogs_small_tile_8._CB312176604_.jpg')
    .then(function (response) {
      return response;
    })
@@ -22,7 +23,7 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('sync', function (event) {
-	debugger;
+	console.log('syn');
 	if (event.tag === 'image-fetch') {
  		event.waitUntil(fetchDogImage());
 	}
