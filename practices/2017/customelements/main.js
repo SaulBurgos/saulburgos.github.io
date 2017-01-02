@@ -20,6 +20,7 @@ function createCustomElement() {
    apes.hoot();
 }
 
+//old way
 function createCustomElementWithShadowDOM() {
    /*var shadow = document.querySelector('#hostElement').attachShadow({mode: 'open'});
    shadow.innerHTML = '<style>p { color: red; }</style><p>Here is some new text</p>';*/
@@ -45,8 +46,50 @@ function createCustomElementWithShadowDOM() {
    saul.whois();
 }
 
+//new way to do it 2017, problem is not full supported
+function createCustomElementWithShadowDOM2() {
+   // Create a class for the element
+   class catFrame extends HTMLElement {
+      constructor() {
+         // Always call super first in constructor
+         super();
+
+         // Create a shadow root
+         var shadow = this.attachShadow({mode: 'open'});
+
+         // Create a standard img element and set it's attributes.
+         var img = document.createElement('img');
+         img.alt = this.getAttribute('data-name');
+         img.src = this.getAttribute('data-img');
+         img.width = '150';
+         img.height = '150';
+
+         //you can use any normal method to add element to the shadow DOM
+         shadow.appendChild(img);
+
+         // Add an event listener to the image.
+         img.addEventListener('click', () => {
+            window.location = this.getAttribute('data-url');
+         });
+
+         // Create a link to the product.
+         var link = document.createElement('a');
+         link.innerText = this.getAttribute('data-name');
+         link.href = this.getAttribute('data-url'); //if you want
+         link.className = 'product-name';
+
+         // Add the link to the shadow root.
+         shadow.appendChild(link);
+      }
+   }
+
+   // Define the new element
+   customElements.define('cat-frame', catFrame);
+}
+
 window.addEventListener('load', function() {
    createCustomElement();
    createCustomElementWithShadowDOM();
+   createCustomElementWithShadowDOM2();
 });
 
