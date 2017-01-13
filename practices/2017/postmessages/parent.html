@@ -27,6 +27,7 @@
 		window.addEventListener('message',function(event) {
 
 			console.log('received from parent');
+			console.log(event)
 			/*if(event.origin !== 'https://davidwalsh.name') return;
 			console.log('message received:  ' + event.data,event);
 			event.source.postMessage('holla back youngin!',event.origin);*/
