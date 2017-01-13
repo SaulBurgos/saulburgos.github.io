@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<title>HTML Tutorial</title>
+
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
+<script>
+	var origin = undefined;
+
+	$( document ).ready(function() {
+
+		$('#emitEvent').on('click',function(){
+
+
+		});
+
+
+		window.addEventListener('message',function(event) {
+
+			console.log('received from parent');
+			/*if(event.origin !== 'https://davidwalsh.name') return;
+			console.log('message received:  ' + event.data,event);
+			event.source.postMessage('holla back youngin!',event.origin);*/
+
+		},false);
+	   
+		/*var domain = 'http://uat.experien.city';
+		var iframe = document.getElementById('myIframe').contentWindow;
+		
+		setInterval(function(){
+
+			var message = 'Hello!  The time is: ' + (new Date().getTime());
+			iframe.postMessage(message,domain); //send the message and target URI
+		},3000);*/
+
+	});
+
+
+	
+</script>
+
+<body>
+
+
+<h1>Post message: Parent</h1>
+
+<iframe id="myIframe" src="http://uat.experien.city/temp/postmessage/child.html" frameborder="0" style="height: 400px;border:1px solid red;"></iframe>
+
+<div>
+	<button id="emitEvent">Emit events</button>
+
+	<ul id="eventsList">	
+	</ul>	
+</div>
+
+
+</body>
+</html>
