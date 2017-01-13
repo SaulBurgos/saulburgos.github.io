@@ -13,7 +13,14 @@
 	$( document ).ready(function() {
 
 		$('#emitEvent').on('click',function(){
-			window.postMessage("hello there!", "*");
+			
+			var domain = 'http://uat.experien.city';
+			var iframe = document.getElementById('myIframe').contentWindow;
+
+			var message = 'Hello!  The time is: ' + (new Date().getTime());
+			iframe.postMessage(message,domain); //send the message and target URI
+			
+
 		});
 
 
@@ -26,14 +33,7 @@
 
 		},false);
 	   
-		/*var domain = 'http://uat.experien.city';
-		var iframe = document.getElementById('myIframe').contentWindow;
 		
-		setInterval(function(){
-
-			var message = 'Hello!  The time is: ' + (new Date().getTime());
-			iframe.postMessage(message,domain); //send the message and target URI
-		},3000);*/
 
 	});
 
