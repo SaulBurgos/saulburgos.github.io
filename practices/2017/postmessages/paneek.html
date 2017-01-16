@@ -52,7 +52,7 @@
 	              	updatePanoramaList(paneekEvent);
 	            break;
 	            case 'hotspot:clicked':
-	              jQuery('#eventsList').append('<li>' + JSON.stringify(paneekEvent.data) + '</li>');	
+	              jQuery('#eventsList').append('<li>hotspot type' + paneekEvent.data.type + ' -  clicked</li>');	
 	            break;
 
 	         }
