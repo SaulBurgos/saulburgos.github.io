@@ -73,8 +73,12 @@
 
 
 	function updatePanoramaList(info) {
-		info.data.panoramas.forEach(function(element) {
+		info.data.panoramas.forEach(function(currentPanorama) {
 			jQuery('#panoramaList').append('<li>' + element.name + '</li>');
+
+			currentPanorama.hotspots.forEach(function(hotspot){
+				jQuery('#hotspotsOnPanorama').append('<li>' + hotspot.title + '</li>');
+			});
 		});
 		
 	};
@@ -121,7 +125,7 @@
 	<h4>
 		Hotspots on Panorama loaded
 	</h4>
-	<ul id="HotspotsOnPanorama">
+	<ul id="hotspotsOnPanorama">
 		
 	</ul>
 </div>
