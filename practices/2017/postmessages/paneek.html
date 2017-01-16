@@ -51,15 +51,10 @@
 						jQuery('#tourHotspots').html(countHotspots);
 	              	updatePanoramaList(paneekEvent);
 	            break;
-	            case 'hotspot:setDone':
-	              
+	            case 'hotspot:clicked':
+	              jQuery('#eventsList').append('<li>' + JSON.stringify(paneekEvent.data) + '</li>');	
 	            break;
-	            case 'hotspot:setUndone':
-	              
-	            break;
-	            case 'tour:loadPanorama':
-	              
-	            break;
+
 	         }
 
 				
