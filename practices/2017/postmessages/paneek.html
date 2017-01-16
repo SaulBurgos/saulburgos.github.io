@@ -18,8 +18,7 @@
 			var iframe = document.getElementById('myIframe').contentWindow;
 
 			var message = 'Hello!  The time is: ' + (new Date().getTime());
-			iframe.postMessage(message,domain); //send the message and target URI
-			
+			iframe.postMessage(message,domain); //send the message and target URI		
 
 		});
 
@@ -46,17 +45,22 @@
 <body>
 
 
-<h1>Post message: Parent</h1>
+<h1>Post message: Parent iframe</h1>
 
 <iframe id="myIframe" src="https://hidden-escarpment-3694.herokuapp.com/#/tour/view/100" frameborder="0" style="height: 400px;width:100%;border:1px solid red;"></iframe>
 
-<div>
+<div style="width:50%">
 	<button id="connetToPaneek">
 		Connect to Panek
 	</button>
-
+	
+	<label>Events</label>
 	<ul id="eventsList">	
 	</ul>	
+</div>
+
+<div style="width:50%">
+	<h5>Info from Paneek</h5>
 </div>
 
 
