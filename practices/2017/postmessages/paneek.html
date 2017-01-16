@@ -14,7 +14,7 @@
 
 		$('#emitEvent').on('click',function(){
 			
-			var domain = 'http://uat.experien.city';
+			var domain = 'https://hidden-escarpment-3694.herokuapp.com';
 			var iframe = document.getElementById('myIframe').contentWindow;
 
 			var message = 'Hello!  The time is: ' + (new Date().getTime());
@@ -28,8 +28,8 @@
 
 			console.log('received from parent');
 			console.log(event);
-			
-			if(event.origin === 'http://uat.experien.city') {
+
+			if(event.origin === 'https://hidden-escarpment-3694.herokuapp.com') {
 				console.log(event);
 			}				
 
