@@ -25,10 +25,11 @@
 			
 			var domain = 'https://hidden-escarpment-3694.herokuapp.com';
 			var iframe = document.getElementById('myIframe').contentWindow;
-
-			var message = 'Hello!  The time is: ' + (new Date().getTime());
-			iframe.postMessage(message,domain); //send the message and target URI		
-
+			var firstMessages = {
+            eventName: 'tour:hi',
+            data: {}
+         };          
+			iframe.postMessage(JSON.stringify(firstMessages),domain); //send the message and target URI		
 		});
 
 
