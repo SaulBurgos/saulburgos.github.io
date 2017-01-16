@@ -39,7 +39,7 @@
 				
 				switch(paneekEvent.eventName) {
 	            case 'tour:listeningIframe':
-	               jQuery('#eventsList').append('<li>' + paneekEvent.eventName + ' <button>load</button></li>');				
+	               jQuery('#eventsList').append('<li>' + paneekEvent.eventName + '</li>');				
 						jQuery('#tourId').html(paneekEvent.data.id);
 						jQuery('#tourPanoramas').html(paneekEvent.data.panoramas.length);
 
@@ -69,7 +69,7 @@
 
 	function updatePanoramaList(info) {
 		info.data.panoramas.forEach(function(currentPanorama) {
-			jQuery('#panoramaList').append('<li>' + currentPanorama.name + '</li>');
+			jQuery('#panoramaList').append('<li>' + currentPanorama.name + ' <button>load</button></li>');
 
 			currentPanorama.hotspots.forEach(function(hotspot){
 				jQuery('#hotspotsOnPanorama').append('<li>' + hotspot.title +  
