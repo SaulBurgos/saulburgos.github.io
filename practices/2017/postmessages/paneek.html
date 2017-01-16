@@ -38,7 +38,15 @@
 				var paneekEvent = JSON.parse(event.data);
 
 				jQuery('#eventsList').append('<li>' + paneekEvent.eventName + '</li>');				
-				
+				jQuery('#tourId').html(paneekEvent.data.id);
+				jQuery('#tourPanoramas').html(paneekEvent.data.panoramas.length);
+
+				var countHotspots = 0;
+				paneekEvent.data.panoramas.forEach(function(element) {
+			    	countHotspots = countHotspots + element.hotspots.length;
+				});
+
+				jQuery('#tourHotspots').html(countHotspots);
 			}				
 
 		},false);
@@ -73,9 +81,15 @@
 
 <div class="column"> 
 	<h5>Info from Paneek</h5>
-	<b>Tour id:</b> <span id="tourId"></span>
-	<b>Panoramas on tour:</b> <span id="tourPanoramas"></span>
-	<b>Hotspots on tour:</b> <span id="tourHotspots"></span>
+	<div>
+		<b>Tour id:</b> <span id="tourId"></span>
+	</div>
+	<div>
+		<b>Panoramas on tour:</b> <span id="tourPanoramas"></span>	
+	</div>
+	<div>
+		<b>Hotspots on tour:</b> <span id="tourHotspots"></span>	
+	</div>	
 </div>
 
 
