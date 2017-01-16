@@ -36,17 +36,33 @@
 			
 			if(event.origin === 'https://hidden-escarpment-3694.herokuapp.com') {
 				var paneekEvent = JSON.parse(event.data);
+				
+				switch(paneekEvent.eventName) {
+	            case 'tour:listeningIframe':
+	               jQuery('#eventsList').append('<li>' + paneekEvent.eventName + '</li>');				
+						jQuery('#tourId').html(paneekEvent.data.id);
+						jQuery('#tourPanoramas').html(paneekEvent.data.panoramas.length);
 
-				jQuery('#eventsList').append('<li>' + paneekEvent.eventName + '</li>');				
-				jQuery('#tourId').html(paneekEvent.data.id);
-				jQuery('#tourPanoramas').html(paneekEvent.data.panoramas.length);
+						var countHotspots = 0;
+						paneekEvent.data.panoramas.forEach(function(element) {
+					    	countHotspots = countHotspots + element.hotspots.length;
+						});
 
-				var countHotspots = 0;
-				paneekEvent.data.panoramas.forEach(function(element) {
-			    	countHotspots = countHotspots + element.hotspots.length;
-				});
+						jQuery('#tourHotspots').html(countHotspots);
+	              	updatePanoramaList(paneekEvent);
+	            break;
+	            case 'hotspot:setDone':
+	              
+	            break;
+	            case 'hotspot:setUndone':
+	              
+	            break;
+	            case 'tour:loadPanorama':
+	              
+	            break;
+	         }
 
-				jQuery('#tourHotspots').html(countHotspots);
+				
 			}				
 
 		},false);
@@ -55,6 +71,10 @@
 
 	});
 
+
+	function updatePanoramaList(info) {
+		debugger;
+	};
 
 	
 </script>
@@ -80,7 +100,7 @@
 </div>
 
 <div class="column"> 
-	<h5>Info from Paneek</h5>
+	<h4>Info from Paneek</h4>
 	<div>
 		<b>Tour id:</b> <span id="tourId"></span>
 	</div>
@@ -90,6 +110,17 @@
 	<div>
 		<b>Hotspots on tour:</b> <span id="tourHotspots"></span>	
 	</div>	
+
+	<h4>Panoramas</h4>
+	<ul id="panoramaList">
+		
+	</ul>
+	<h4>
+		Hotspots on Panorama loaded
+	</h4>
+	<ul id="HotspotsOnPanorama">
+		
+	</ul>
 </div>
 
 
