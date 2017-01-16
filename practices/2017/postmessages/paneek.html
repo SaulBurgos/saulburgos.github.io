@@ -39,7 +39,7 @@
 				
 				switch(paneekEvent.eventName) {
 	            case 'tour:listeningIframe':
-	               jQuery('#eventsList').append('<li>' + paneekEvent.eventName + '</li>');				
+	               jQuery('#eventsList').append('<li>' + paneekEvent.eventName + ' <button>load</button></li>');				
 						jQuery('#tourId').html(paneekEvent.data.id);
 						jQuery('#tourPanoramas').html(paneekEvent.data.panoramas.length);
 
