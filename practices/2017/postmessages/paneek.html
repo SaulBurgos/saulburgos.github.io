@@ -12,7 +12,7 @@
 
 	$( document ).ready(function() {
 
-		$('#emitEvent').on('click',function(){
+		$('#connetToPaneek').on('click',function(){
 			
 			var domain = 'https://hidden-escarpment-3694.herokuapp.com';
 			var iframe = document.getElementById('myIframe').contentWindow;
@@ -25,12 +25,12 @@
 
 
 		window.addEventListener('message',function(event) {
-
-			console.log('received from parent');
-			console.log(event);
-
+			
 			if(event.origin === 'https://hidden-escarpment-3694.herokuapp.com') {
-				console.log(event);
+				var paneekEvent = JSON.parse(event.data);
+
+				jQuery('#eventsList').append('<li>' + paneekEvent.eventName + '</li>');				
+				
 			}				
 
 		},false);
@@ -51,7 +51,9 @@
 <iframe id="myIframe" src="https://hidden-escarpment-3694.herokuapp.com/#/tour/view/100" frameborder="0" style="height: 400px;width:100%;border:1px solid red;"></iframe>
 
 <div>
-	<button id="emitEvent">Emit events</button>
+	<button id="connetToPaneek">
+		Connect to Panek
+	</button>
 
 	<ul id="eventsList">	
 	</ul>	
