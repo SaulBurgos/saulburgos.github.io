@@ -2,6 +2,14 @@
 <html>
 <title>HTML Tutorial</title>
 
+<style>
+	.column {
+		width: 50%;
+		display: inline-block;
+		vertical-align: top;
+	}	
+</style>
+
 <script
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
@@ -49,7 +57,7 @@
 
 <iframe id="myIframe" src="https://hidden-escarpment-3694.herokuapp.com/#/tour/view/100" frameborder="0" style="height: 400px;width:100%;border:1px solid red;"></iframe>
 
-<div style="width:50%">
+<div class="column">
 	<button id="connetToPaneek">
 		Connect to Panek
 	</button>
@@ -59,7 +67,7 @@
 	</ul>	
 </div>
 
-<div style="width:50%">
+<div class="column">
 	<h5>Info from Paneek</h5>
 </div>
 
