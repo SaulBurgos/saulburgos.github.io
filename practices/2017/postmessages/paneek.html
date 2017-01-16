@@ -73,7 +73,10 @@
 
 
 	function updatePanoramaList(info) {
-		debugger;
+		info.data.panoramas.forEach(function(element) {
+			jQuery('#panoramaList').append('<li>' + element.name + '</li>');
+		});
+		
 	};
 
 	
