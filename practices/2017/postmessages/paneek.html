@@ -52,7 +52,7 @@
 	              	updatePanoramaList(paneekEvent);
 	            break;
 	            case 'hotspot:clicked':
-	              jQuery('#eventsList').append('<li>hotspot type' + paneekEvent.data.type + ' -  clicked</li>');	
+	              jQuery('#eventsList').append('<li>hotspot type:' + paneekEvent.data.type + ' -  clicked</li>');	
 	            break;
 
 	         }
@@ -72,7 +72,9 @@
 			jQuery('#panoramaList').append('<li>' + currentPanorama.name + '</li>');
 
 			currentPanorama.hotspots.forEach(function(hotspot){
-				jQuery('#hotspotsOnPanorama').append('<li>' + hotspot.title + '</li>');
+				jQuery('#hotspotsOnPanorama').append('<li>' + hotspot.title +  
+					'<button>Set done</button><button>Set undone</button>' +
+				+ '</li>');
 			});
 		});
 		
