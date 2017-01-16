@@ -27,7 +27,8 @@
 		window.addEventListener('message',function(event) {
 
 			console.log('received from parent');
-
+			console.log(event);
+			
 			if(event.origin === 'http://uat.experien.city') {
 				console.log(event);
 			}				
