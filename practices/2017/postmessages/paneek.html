@@ -46,7 +46,7 @@
             	type: $(this).attr('data-type')
             }
          };          
-			iframe.postMessage(JSON.stringify(firstMessages),domain);
+			iframe.postMessage(JSON.stringify(hotspotMessage),domain);
 
 		});
 
@@ -64,7 +64,7 @@
             	type: $(this).attr('data-type')
             }
          };          
-			iframe.postMessage(JSON.stringify(firstMessages),domain);
+			iframe.postMessage(JSON.stringify(hotspotMessage),domain);
 		});
 
 		window.addEventListener('message',function(event) {
