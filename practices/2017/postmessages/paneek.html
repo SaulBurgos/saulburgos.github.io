@@ -18,13 +18,13 @@
 
 <script>
 	var origin = undefined;
+	var domain = 'https://hidden-escarpment-3694.herokuapp.com';
+	var iframe = undefined;
 
 	$( document ).ready(function() {
+		iframe = document.getElementById('myIframe').contentWindow;
 
-		$('#connetToPaneek').on('click',function(){
-			
-			var domain = 'https://hidden-escarpment-3694.herokuapp.com';
-			var iframe = document.getElementById('myIframe').contentWindow;
+		$('#connetToPaneek').on('click',function() {			
 			var firstMessages = {
             eventName: 'tour:hi',
             data: {}
@@ -33,11 +33,38 @@
 		});
 
 		$('body').on('click','.js-hotpostDone',function() {
-			console.log('set done');
+			
+			if($(this).attr('data-type') != "placeholder") {
+				alert('Only hotspots of the type "placeholder" can be trigger events');
+				return;
+			}
+
+			var hotspotMessage = {
+            eventName: 'hotspot:setDone',
+            data: {
+            	id: $(this).attr('data-id')
+            	type: $(this).attr('data-type')
+            }
+         };          
+			iframe.postMessage(JSON.stringify(firstMessages),domain);
+
 		});
 
 		$('body').on('click','.js-hotpostUndone',function() {
-			console.log('set undone');
+			
+			if($(this).attr('data-type') != "placeholder") {
+				alert('Only hotspots of the type "placeholder" can be trigger events');
+				return;
+			}
+
+			var hotspotMessage = {
+            eventName: 'hotspot:setUndone',
+            data: {
+            	id: $(this).attr('data-id')
+            	type: $(this).attr('data-type')
+            }
+         };          
+			iframe.postMessage(JSON.stringify(firstMessages),domain);
 		});
 
 		window.addEventListener('message',function(event) {
