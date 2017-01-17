@@ -81,8 +81,8 @@
 
 			currentPanorama.hotspots.forEach(function(hotspot){
 				jQuery('#hotspotsOnPanorama').append('<li>' + hotspot.title +  
-					'<button class="js-hotpostDone" data-id="' + hotspot.id + '">Done</button>' + 
-					' <button class="js-hotpostUndone" data-id="' + hotspot.id + '">Undone</button>' +
+					'<button class="js-hotpostDone" data-id="' + hotspot.id + '" data-type="' + hotspot.type + '">Done</button>' + 
+					' <button class="js-hotpostUndone" data-id="' + hotspot.id + '" data-type="' + hotspot.type + '">Undone</button>' +
 				'</li>');
 			});
 		});		
