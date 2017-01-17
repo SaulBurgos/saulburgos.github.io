@@ -67,6 +67,17 @@
 			iframe.postMessage(JSON.stringify(hotspotMessage),domain);
 		});
 
+		$('body').on('click','.js-loadPanorama',function() {
+
+			var message = {
+            eventName: 'tour:loadPanorama',
+            data: {
+            	id: $(this).attr('data-id')
+            }
+         };          
+			iframe.postMessage(JSON.stringify(message),domain);
+		});
+
 		window.addEventListener('message',function(event) {
 			
 			if(event.origin === 'https://hidden-escarpment-3694.herokuapp.com') {
