@@ -101,7 +101,7 @@
 	              jQuery('#eventsList').append('<li>hotspot type:' + paneekEvent.data.type + ' -  clicked</li>');	
 	            break;
 	            case 'tour:allHotspotsVisited':
-	            	alert('All hotspots in your visited');
+	            	jQuery('#eventsList').append('<li>' + paneekEvent.eventName + '</li>');
 	            break;
 
 	         }
