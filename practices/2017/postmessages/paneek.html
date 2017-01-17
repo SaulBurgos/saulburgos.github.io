@@ -53,7 +53,7 @@
 		$('body').on('click','.js-hotpostUndone',function() {
 			
 			if($(this).attr('data-type') != "placeholder") {
-				alert('Only hotspots of the type "placeholder" can be trigger events');
+				alert('Only hotspots of the type "placeholder" can have events');
 				return;
 			}
 
@@ -104,7 +104,8 @@
 
 	function updatePanoramaList(info) {
 		info.data.panoramas.forEach(function(currentPanorama) {
-			jQuery('#panoramaList').append('<li>' + currentPanorama.name + ' <button>load</button></li>');
+			jQuery('#panoramaList').append('<li>' + currentPanorama.name + 
+				' <button class="js-loadPanorama" data-id="' + currentPanorama.id + '">load</button></li>');
 
 			currentPanorama.hotspots.forEach(function(hotspot){
 				jQuery('#hotspotsOnPanorama').append('<li>' + hotspot.title +  
