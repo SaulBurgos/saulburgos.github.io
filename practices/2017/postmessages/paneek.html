@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>HTML Tutorial</title>
+<title>How to connect with Paneek</title>
 
 <style>
 	
@@ -42,8 +42,8 @@
 			var hotspotMessage = {
             eventName: 'hotspot:setDone',
             data: {
-            	id: $(this).attr('data-id'),
-            	type: $(this).attr('data-type')
+            	id: $(this).attr('data-id'), //hotspot id 
+            	type: $(this).attr('data-type') //hotspot type
             }
          };          
 			iframe.postMessage(JSON.stringify(hotspotMessage),domain);
@@ -60,8 +60,8 @@
 			var hotspotMessage = {
             eventName: 'hotspot:setUndone',
             data: {
-            	id: $(this).attr('data-id'),
-            	type: $(this).attr('data-type')
+            	id: $(this).attr('data-id'), //hotspot id
+            	type: $(this).attr('data-type') //hotspot type
             }
          };          
 			iframe.postMessage(JSON.stringify(hotspotMessage),domain);
@@ -72,7 +72,7 @@
 			var message = {
             eventName: 'tour:loadPanorama',
             data: {
-            	id: $(this).attr('data-id')
+            	id: $(this).attr('data-id') //panorama id
             }
          };          
 			iframe.postMessage(JSON.stringify(message),domain);
@@ -135,15 +135,37 @@
 
 <body>
 
+<h1>
+	Connect with paneek via postMessage with Javascript
+</h1>
 
-<h1>Post message: Parent iframe</h1>
+<p>
+	Using the 
+	<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage" target="_blank">
+		Web API postMessage 	
+	</a> we can send events to paneek in order to control several actions in our virtual tour. To test it follow 
+	the next steps
+</p>
+<ol>
+	<li>
+		Click on the button "Connect to Paneek"
+	</li>
+	<li>
+		Now you will be able to see all the information about your tour and additional buttons to test the communication with 
+		paneek. Just click on them 
+	</li>
+</ol>
+
+<h1>
+	Iframe loading paneek
+</h1>
 
 <iframe id="myIframe" src="https://hidden-escarpment-3694.herokuapp.com/#/tour/view/100" frameborder="0" style="height: 400px;width:100%;border:1px solid red;"></iframe>
 
 <div class="column">
 	<div>
 		<button id="connetToPaneek">
-			Connect to Panek
+			Connect to Paneek
 		</button>	
 	</div>
 	
@@ -176,6 +198,67 @@
 		
 	</ul>
 </div>
+
+<h1>
+	Additional information
+</h1>
+<p>
+	In order to use this functionality follow the next steps:   
+</p>
+
+<ol>
+	<li>
+		Create a virtual tour with at least 2 panoramas
+	</li>
+	<li>
+		In this process you will be force to choose a "mode navigation". If you want to control the navigation with code, you can select "Arrow mode" and leave all the arrows with "none", in this way you will not have controls of navigation.
+	</li>
+	<li>
+		Go to "options > Developer options". And add your domain.  
+		<p>
+			Ex: http:www.yoursite.com or https:www.myawesomesite.com.  Only one domain can be added.
+		</p>
+	</li>
+	<li>
+		In your site add an iframe with the url of your virtual tour like in this demo, using this url: 
+		<p>
+			https://hidden-escarpment-3694.herokuapp.com/#/tour/view/<b>tourid</b> (Replace the "tourid" with the correct Id)
+		</p> 
+		
+	</li>
+	<li>
+		<b>Note:</b> Only tour can work with postMessages, individual panoramas don't.
+	</li>
+</ol>
+
+<h3>
+	How to create you own Hotspots
+</h3>
+<p>
+	By default, all hotspots are set Done after a click by the user but you can avoid this with the hotspot type "placeholder". With "placeholder" we have an option called "Set done after click". If you set this option to false the hotspot is not set done after a click.
+</p>
+<p>
+	Now you only need to wait for the event from paneek "hotspot:clicked" and you can do whatever you want.
+</p>
+
+<h3>
+	You can send these events:
+</h3>
+
+<ul>
+	<li>
+		<b>"tour:hi" : </b>  Initial event to connect to paneek this is mandatory.
+	</li>
+	<li>
+		<b>"hotspot:setDone" :</b> Set a hotspot like seen. 
+	</li>
+	<li>
+		<b>"hotspot:setUndone" : </b> Set a hotspot like not seen.
+	</li>
+	<li>
+		<b>"tour:loadPanorama" : </b> A tour is a collection of panoramas, So you can load a panorama with this event
+	</li>	
+</ul>
 
 
 </body>
