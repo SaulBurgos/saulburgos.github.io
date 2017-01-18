@@ -227,6 +227,12 @@
 		
 	</li>
 	<li>
+		Always check the origin of the event in your site. Ex:
+		<p>
+			if(event.origin === 'https://hidden-escarpment-3694.herokuapp.com') { }				
+		</p>
+	</li>
+	<li>
 		<b>Note:</b> Only tour can work with postMessages, individual panoramas don't.
 	</li>
 </ol>
@@ -275,6 +281,13 @@
 		<b>"tour:allHotspotsVisited" :</b> When all hotspots have been seen them.
 	</li>
 </ul>
+
+<h3>
+	Note
+</h3>
+<p>
+	Please avoid repeated calls to this API, if we found something unusual we will delete your tour.
+</p>
 
 </body>
 </html>
