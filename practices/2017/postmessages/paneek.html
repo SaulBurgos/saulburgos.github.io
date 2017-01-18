@@ -80,7 +80,7 @@
 
 		window.addEventListener('message',function(event) {
 			
-			if(event.origin === 'https://hidden-escarpment-3694.herokuapp.com') {
+			if(event.origin === 'https://hidden-escarpment-3694.herokuapp.com') {				
 				var paneekEvent = JSON.parse(event.data);
 				
 				switch(paneekEvent.eventName) {
@@ -260,6 +260,21 @@
 	</li>	
 </ul>
 
+<h3>
+	You can listen these events:
+</h3>
+<ul>
+	<li>
+		<b>"tour:listeningIframe" :</b> This event is triggered after "tour:hi", is like a confirmation about paneek is ready. You will recieve a JSON with all the information about the tour.
+	</li>
+	<li>
+		<b>"hotspot:clicked" :</b> Each time a hotspot is clicked by the user. You get a JSON with the Hotspot information, you 
+		can use id to search it in your array.
+	</li>
+	<li>
+		<b>"tour:allHotspotsVisited" :</b> When all hotspots have been seen them.
+	</li>
+</ul>
 
 </body>
 </html>
