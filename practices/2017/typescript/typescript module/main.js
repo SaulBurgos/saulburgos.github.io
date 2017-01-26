@@ -1,8 +1,16 @@
 /// <reference path="require.d.ts" />
 require.config({
-    baseUrl: './'
+    baseUrl: './',
+    shim: {
+        jquery: {
+            export: '$'
+        }
+    },
+    paths: {
+        'jquery': 'jquery-1.9.1.min'
+    }
 });
-require(['hotspotBootstrapper'], function (hotspotBootstrapper) {
+require(['hotspotBootstrapper', 'jquery'], function (hotspotBootstrapper, $) {
     hotspotBootstrapper.run();
 });
 //# sourceMappingURL=main.js.map
