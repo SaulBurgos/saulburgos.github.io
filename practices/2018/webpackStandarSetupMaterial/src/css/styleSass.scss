@@ -1,0 +1,14 @@
+@import "~@material/button/mdc-button";
+@import "@material/textfield/mdc-text-field";
+
+body {	
+
+	p	{
+		border: 1px dashed red !important;	
+	}
+}
+
+.my-card {
+	height: 350px;
+	width: 350px;
+}
