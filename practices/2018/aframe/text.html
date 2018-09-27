@@ -1,0 +1,39 @@
+<html>
+
+<head>
+	<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+	<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.3/dist/aframe-extras.min.js"></script>
+</head>
+
+<script>
+	function load1 () {
+		
+	}
+
+	window.onload = load1;
+</script>
+
+<body>
+	<a-scene>		
+		
+		<a-assets>
+			<a-asset-item
+			src="https://s3.amazonaws.com/gurivr/23f1972f-99c6-4f68-a0f0-392c16a02333-trees.dae" 
+			id="bosque">				
+			</a-asset-item>	
+			<a-asset-item src="https://ucarecdn.com/800bc582-4e80-46fe-b5a9-598513a68db4/" 
+			id="caballero"></a-asset-item>		
+			<video src="https://ucarecdn.com/13130831-c728-4c21-8c60-b7ff2a4832c0/city.mp4" autoplay loop="true" id="video1"><video>
+			<audio src="https://s3-us-west-2.amazonaws.com/saulbpano/resources/free/sounds/forest-nature.mp3" id="audio"></audio>
+		</a-assets>
+
+		<a-video src="#video1" position="-1.5 1.5 -2"></a-video>
+		<a-sound src="#audio"></a-sound>
+		<a-entity ply-model="src:#caballero" rotation="-90 0 0" position="0 0 -5" scale="0.1 0.1 0.1"></a-entity>
+		<a-plane color="#CCC" height="20" width="20" rotation="-90 0 0"></a-plane>
+		<a-collada-model src="#bosque"></a-collada-model>
+		<a-sky color="skyblue"></a-sky>
+	</a-scene>
+</body>
+
+</html>

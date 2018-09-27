@@ -1,0 +1,29 @@
+<html lang="en">
+
+<head>
+	<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>	
+	<script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.2.0/dist/aframe-physics-system.min.js"></script>
+	<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.3/dist/aframe-extras.min.js"></script>
+</head>
+
+<script>
+	function load1 () {}
+	window.onload = load1;
+	
+</script>
+
+<body>
+	<a-scene>
+		
+		<a-assets>			
+		</a-assets>
+		
+		<a-sphere position="0 10.5 -3" radius="1.25" color="red" dynamic-body></a-sphere>
+		<a-plane static-body color="#CCC" height="20" width="20" rotation="-90 0 -3"></a-plane>		
+		<a-entity camera position="0 1.6 3" look-controls wasd-controls></a-entity>
+		<a-sky color="skyblue"></a-sky>
+		
+	</a-scene>
+</body>
+
+</html>

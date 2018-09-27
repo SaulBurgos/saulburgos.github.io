@@ -1,0 +1,62 @@
+<html>
+
+<head>
+	<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+	<script src="https://rawgit.com/takahirox/aframe-rain/master/build/aframe-rain.min.js"></script>	
+</head>
+
+<script>
+	function load1 () {
+
+		AFRAME.registerComponent('camaleon', {
+			schema: {
+				interval: { type: 'number', default: 1000 },
+				defaultColor: { type: 'color', default: '#fff' }
+			},
+			init: function() {								
+				var that = this;
+				var colors = ['green','blue', 'red','yellow'];
+
+				var i = 0;
+				this.el.setAttribute('color',this.data.defaultColor);
+
+				this.colorInterval = setInterval(function(){
+					i = (i + 1) % colors.length;
+					that.el.setAttribute('color',colors[i]);
+				},this.data.interval);
+			},
+			update: function() {
+				console.log('update');
+			},
+			remove: function() {
+				this.el.setAttribute('color',this.data.defaultColor)
+				clearInterval(this.colorInterval);
+			}
+		});
+
+		document.querySelector('a-torus').setAttribute('camaleon',"defaultColor: skyblue; interval: 1000;");
+
+		setTimeout(function(){
+			document.querySelector('a-torus').removeAttribute('camaleon');
+		},5000);
+	}
+
+	window.onload = load1;
+</script>
+
+<body>
+	<a-scene rain>
+		<a-torus color="#43A367" position="0 0 -7"
+		arc="230" radius="5" radius-tubular="0.2" height="3"></a-torus>
+
+		
+		<!-- <a-entity id="cameraman" position="-2 0 2">
+			<a-camera></a-camera>
+			<a-animation attribute="position" from="-2 2 2" to="0 0 0" dur="2000" begin="1000"></a-animation>
+		</a-entity> -->
+
+		<a-sky src="panorama.jpg"></a-sky>
+	</a-scene>
+</body>
+
+</html>
