@@ -1,0 +1,45 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, WebVR! • A-Frame</title>
+    <meta name="description" content="Hello, WebVR! • A-Frame">
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    
+    <script src="node_modules/aframe-click-drag-component/dist/aframe-click-drag-component.min.js"></script>
+    <script>      
+      registerAframeClickDragComponent(window.AFRAME);
+    </script>
+  </head>
+  <body>
+    <a-scene background="color: #ECECEC">
+      
+       <a-sphere click-drag position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-box click-drag position="-1 0.5 -3" rotation="0 45 0" width="1" height="1" depth="1"  color="#4CC3D9"></a-box>
+      <a-cylinder click-drag position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
+      <a-camera ></a-camera>
+    </a-scene>
+  </body>
+</html> -->
+
+<head>
+	<title>My A-Frame Scene</title>
+	<script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script> 
+	<script src="https://unpkg.com/aframe-look-at-component@0.5.1/dist/aframe-look-at-component.min.js"></script> 
+ </head>
+  
+ <body>
+	<a-scene>
+	  <a-entity id="monster" geometry="primitive: box" material="src: url(monster.jpg)"
+					look-at="[camera]"></a-entity>
+	  <a-entity id="player" camera></a-entity>
+  
+	  <a-entity id="dog" geometry="primitive: box" material="src: url(dog.png)"
+					look-at="#squirrel"></a-entity>
+	  <a-entity id="squirrel">
+		 <a-animation id="running" attribute="position" to="100 0 0"></a-animation>
+	  </a-entity>
+	</a-scene>
+ </body>

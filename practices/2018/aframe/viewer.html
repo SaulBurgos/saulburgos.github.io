@@ -1,0 +1,175 @@
+<html>
+
+<head>
+	<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>	
+	<!-- <script src="https://unpkg.com/aframe-look-at-component@0.5.1/dist/aframe-look-at-component.min.js"></script> -->
+	<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+	<script>	
+		AFRAME.registerComponent('andrei-look-at', {
+			schema: {
+				default: '',
+
+				parse: function (value) {
+				// A static position to look at.
+				if (AFRAME.utils.coordinates.isCoordinates(value) || typeof value === 'object') {
+					return coordinates.parse(value);
+				}
+				// A selector to a target entity.
+				return value;
+				},
+
+				stringify: function (data) {
+				if (typeof data === 'object') {
+					return coordinates.stringify(data);
+				}
+				return data;
+				}
+			},
+
+			init: function () {
+				this.target3D = null;
+				this.vector = new THREE.Vector3();
+			},
+
+			/**
+			 * If tracking an object, this will be called on every tick.
+			 * If looking at a position vector, this will only be called once (until further updates).
+			 */
+			update: function () {
+				var self = this;
+				var target = self.data;
+				var object3D = self.el.object3D;
+				var targetEl;
+
+				// No longer looking at anything (i.e., look-at="").
+				if (!target || (typeof target === 'object' && !Object.keys(target).length)) {
+				return self.remove();
+				}
+				
+				// Look at a position.
+				if (typeof target === 'object') {
+					return object3D.lookAt(new THREE.Vector3(Object3D.x, target.y, Object3D.z));
+				}
+
+				// Assume target is a string.
+				// Query for the element, grab its object3D, then register a behavior on the scene to
+				// track the target on every tick.
+				targetEl = self.el.sceneEl.querySelector(target);
+				if (!targetEl) {
+					warn('"' + target + '" does not point to a valid entity to look-at');
+					return;
+				}
+				if (!targetEl.hasLoaded) {
+					return targetEl.addEventListener('loaded', function () {
+						self.beginTracking(targetEl);
+					});
+				}
+				return self.beginTracking(targetEl);
+			},
+
+			tick: function (t) {
+				// Track target object position. Depends on parent object keeping global transforms up
+				// to state with updateMatrixWorld(). In practice, this is handled by the renderer.
+				var target;
+				var target3D = this.target3D;
+				var object3D = this.el.object3D;
+				var vector = this.vector;
+
+				if (this.target3D) {
+					target = this.el.object3D.parent.worldToLocal(this.target3D.getWorldPosition());
+					
+					if (this.el.getObject3D('camera')) {
+						// Flip the vector to -z, looking away from target for camera entities. When using
+						// lookat from THREE camera objects, this is applied for you, but since the camera is
+						// nested into a Object3D, we need to apply this manually.
+						vector.subVectors(this.el.object3D.position, target).add(this.el.object3D.position);
+					} else {
+						vector = target;
+					}
+
+					//object3D.lookAt(vector);
+					// this.el.object3D.rotateY(this.target3D.rotation.y);
+					//console.log(object3D.getWorldRotation());
+					object3D.rotateY(object3D.getWorldRotation().y * -1);
+					object3D.rotateX(object3D.getWorldRotation().x * -1);
+					object3D.rotateZ(object3D.getWorldRotation().z * -1);
+
+				}
+
+			},
+
+			beginTracking: function (targetEl) {
+				this.target3D = targetEl.object3D;
+			}
+
+			});
+
+	</script>
+</head>
+
+<!--
+	With the Camera default position and rotation element move
+
+		Position: 
+			- z = front
+			+ z = back
+			- x = left
+			+ x = right
+			+ y = top
+			- y = down
+
+		Rotation
+			+ y = counter clockwise
+			- y = clockwise
+
+
+	locked vertical axis
+		https://github.com/aframevr/aframe/issues/2557
+-->
+
+<body>
+	
+	<!-- <i class="material-icons">face</i> -->
+
+	<a-scene>
+		<a-assets>
+				<img id="sky" src="https://c2.staticflickr.com/2/1924/45568430031_231557dad7_k.jpg">
+				<img id="catLookingAt" src="assets/cat.jpg">
+				<img id="svgIcon" src="assets/mountain.svg">
+				<img id="arrow" src="assets/arrow.svg">
+		</a-assets>
+		<a-sky src="#sky"></a-sky>
+		<!-- <a-plane color="#abc" height="20" width="20" rotation="-90 0 0"></a-plane> -->
+		<a-entity camera wasd-controls position="0 1.8 0" look-controls="pointerLockEnabled:false;enabled:true;">			
+			<a-cursor fuse="true"></a-cursor>
+			<a-entity position="0 -1.8 -3" andrei-look-at="#red1">		
+				<a-image src="#arrow" position="0.5 0 0" rotation="90 0 0" height="0.5" width="0.5"></a-image>
+				<a-image src="#arrow" position="-0.5 0 0" rotation="90 180 0" height="0.5" width="0.5"></a-image>
+				<a-image src="#arrow" position="0 0 -0.5" rotation="90 90 0" height="0.5" width="0.5"></a-image>
+				<a-image src="#arrow" position="0 0 0.5" rotation="90 -90 0" height="0.5" width="0.5"></a-image>
+			</a-entity>		
+			
+		</a-entity>		
+
+		<a-circle src="#catLookingAt" id="red1" radius="0.2" rotation="0 0 0" position="0 4 -3"></a-circle>
+		<a-circle src="#catLookingAt" id="red2" radius="0.2" rotation="0 0 0" position="0 6 -3"></a-circle>		
+		<a-circle src="#catLookingAt" id="red3" radius="0.2" rotation="0 0 0" position="0 1.8 -3"></a-circle>
+
+		<!-- <a-circle src="#catLookingAt" id="blue"  radius="0.2" rotation="0 180 0" position="0 4 3"></a-circle>
+		<a-circle src="#catLookingAt" id="green" height="0.5"  width="0.5" rotation="0 -90 0" position="3 4 0"></a-circle>
+		<a-circle src="#catLookingAt" id="yellow"  radius="0.2" rotation="0 90 0" position="-3 4 0"></a-circle> -->
+
+		<a-circle src="#catLookingAt" look-at="[camera]" id="blue"  radius="0.2"  position="0 4 3"></a-circle>
+		<a-circle src="#catLookingAt" look-at="[camera]" id="green" radius="0.2"  position="3 4 0"></a-circle>
+		<a-circle src="#catLookingAt" look-at="[camera]" id="yellow" radius="0.2" position="-3 4 0"></a-circle>
+
+		<a-image src="#svgIcon" look-at="[camera]" position="1 4 -3" height="0.5" width="0.5"></a-image>
+
+		
+		
+	</a-scene>
+</body>
+
+</html>
+
+
