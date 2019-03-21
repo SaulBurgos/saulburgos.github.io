@@ -1,0 +1,62 @@
+/*** Font Family ***/
+
+.viewer {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.viewer a {
+    color: #4da4fc;
+    text-decoration: none;
+}
+
+.viewer a:hover, .viewer a:active, .viewer a:visited {
+    opacity: .8;
+}
+
+
+/*** Text Sizes ***/
+
+.viewer__primary-title {
+    color: #fff;
+    font-size: 	2.75rem; /*44px*/
+    font-weight: 900; /*Lato Black*/
+    margin:0;
+}
+
+.viewer__secondary-title {
+	color: #ddd;
+	font-size: 1.2rem;
+	font-weight: 400;
+	margin: 0;
+}
+
+.viewer__default-text {
+    /*Styleguide says 1.3125 (21px) Leaving 16px because we think it is too big for default style*/    
+    font-weight: 400; /*Lato Regular*/
+}
+
+/*** Modifiers ***/
+
+.viewer--bold {
+    font-weight: 700 /*Lato Bold*/;
+}
+
+.viewer__primary-title--shadow-text {
+    text-shadow: 2px 2px 2px #282828;
+}
+
+.viewer__secondary-title--shadow-text {
+    text-shadow: 1px 1px 1px #282828;
+}
+
+.viewer--text-disabled {
+    color: #666;
+}
+
+.viewer--text-active {
+    color: #fff;
+    font-weight: 900; /*Lato bold*/
+}

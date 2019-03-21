@@ -1,0 +1,22 @@
+.viewer__description-container {
+  direction: rtl;
+  max-height: 40vh;
+  overflow: auto;
+  padding-left: 1.5rem;
+  position: absolute;
+  top: 25%;
+  width: 35vw;
+}
+
+.viewer__description-content {
+  direction: ltr;
+  position: relative;
+}
+
+.viewer__description-title {
+  margin: -0.21rem 0 1.5625rem;
+}
+
+.viewer__description-subtitle {
+  margin-bottom: 1.3125rem;
+}

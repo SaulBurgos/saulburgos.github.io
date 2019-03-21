@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  /*border-style: solid;
+	border-color: green;
+	border-width: 1px;*/
+}
+
+body, html {
+  font-size: 16px;
+  height: 100%;
+}
+
+p {
+  margin: 0 0 0.625rem;
+}
+
+/* OVERLAY */
+/* ---------------------------------- */
+
+.main-overlay {
+  background-color: #282828;
+  bottom: 0;
+  display: none;
+  left: 0;
+  opacity: 0.9;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.main-overlay--open {
+  display: block;
+}
+
+.main-overlay__body {
+  bottom: 3.75rem;
+  left: 3.75rem;
+  position: absolute;
+  right: 4.3rem;
+  top: 3.75rem;
+}
+
+.main-overlay__close {
+  position: absolute;
+  right: 2.5rem;
+  top: 2.75rem;
+}
+
+.main-overlay__close .viewer__icon {
+  opacity: 1;
+}
+
+/* VIEWER */
+/* ---------------------------------- */
+
+.viewer {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+.viewer::after {
+  content: '';
+  bottom: 0;
+  box-shadow: inset 0 -100px 113px -39px rgba(0, 0, 0, 0.6);
+  height: 12.5rem;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  -webkit-box-shadow: inset 0 -100px 113px -39px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: inset 0 -100px 113px -39px rgba(0, 0, 0, 0.6);
+}
+
+.viewer__top-nav, .viewer__bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  padding: 1.25rem;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+}
+
+.viewer__bottom-nav {
+  bottom: 0;
+}
+
+.viewer__corner {
+  pointer-events: auto;
+}
+
+.viewer__options {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.viewer__options>* {
+  margin-left: 1.875rem;
+}
+
+.viewer__scene-title {
+  display: flex;
+  align-items: center;
+  max-width: 45vw;
+  overflow: hidden;
+}
+
+/* VIEWER ICONS */
+/* ---------------------------------- */
+
+.viewer__icon {
+  cursor: pointer;
+  fill: #fff;
+  height: 1.875rem;
+  opacity: 0.5;
+  transition: opacity .3s;
+  width: 1.875rem;
+}
+
+.viewer__icon:hover, .viewer__icon--active {
+  opacity: 1;
+}
+
+
+/* VIEWER SCROLLBAR */
+/* ---------------------------------- */
+
+.viewer__primary-scrollbar::-webkit-scrollbar {
+  background-color: #666;
+  width: .5rem;
+}
+
+.viewer__primary-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #fff;
+}
+
+
+/* Z-INDEX */
+/* ---------------------------------- */
+
+.zindex__view-panel {
+  z-index: 2;
+}
+
+.zindex__overlay {
+  z-index: 2000;
+}

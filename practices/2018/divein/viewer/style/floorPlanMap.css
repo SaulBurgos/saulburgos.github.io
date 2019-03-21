@@ -1,0 +1,51 @@
+.floorPlanMapContainer {
+	background-color: yellow;
+	/*width: 15%;
+	height: 15%;*/
+	width: 29%;
+	height: 33%;
+	display: none;
+	position: absolute;
+	overflow: hidden;
+	-webkit-transition: width 1s, height 1s; /* For Safari 3.1 to 6.0 */
+	transition: width 1s, height 1s;
+	transition-timing-function: ease;
+}
+
+.floorPlanMapContainer--open {	
+	display: flex; 
+	flex-direction: column;
+	bottom: 0;
+	right:0;
+	margin: 5px;
+}
+
+/*.floorPlanMapContainer--open:hover {	
+	width: 35%;
+	height: 30%;
+}*/
+
+#map{
+	height: 100%;
+}
+
+
+.floorPlanMapContainer_openButton {
+	text-align: center;
+	font-size: 17px;
+	color: white;
+	text-shadow: 1px 1px 1px yellow;
+	background-color: blue;
+	height: 28px;
+	width: 35px;
+	right: 2px;
+	/*top: 3px;*/
+    padding: 5px;
+    margin-top: 40px;
+}
+
+/*.pswp, pswp__img {
+	-webkit-transition: width 1s, height 1s;
+	transition: width 1s, height 1s;
+	transition-timing-function: ease;
+}*/

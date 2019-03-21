@@ -1,0 +1,50 @@
+.viewer__fullscreen-close {
+  opacity: 1;
+}
+
+.viewer__fullscreen:hover {
+  animation-duration: .5s;
+  animation-name: pulseout
+}
+
+.viewer__fullscreen-close,
+.viewer__fullscreen--active .viewer__fullscreen {
+  display: none;
+}
+
+.viewer__fullscreen--active .viewer__fullscreen-close {
+  display: block;
+}
+
+.viewer__fullscreen-close:hover {
+  animation-duration: .5s;
+  animation-name: pulsein
+}
+
+@keyframes pulseout {
+  0% {
+    transform: scale(1); 
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulsein {
+  0% {
+    transform: scale(1); 
+  }
+
+  50% {
+    transform: scale(.7);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
