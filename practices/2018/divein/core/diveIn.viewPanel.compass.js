@@ -8,10 +8,10 @@ export class Compass extends Aggregation(ViewPanel) {
     super();
     this.type = 'compass';
     this.containerSelector = `viewer__compass`;
-    this.template = 'http://localhost:8080/viewer/template/compass.html';
+    this.template = 'template/compass.html';
     this.dependencies = [{
       type: 'css',
-      url: 'http://localhost:8080/viewer/style/compass.css'
+      url: 'style/compass.css'
     }];
 
     this.compassElement = null;

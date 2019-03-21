@@ -7,10 +7,10 @@ export class Logo extends Aggregation(ViewPanel) {
 		super();
 		this.type = 'logo';
 		this.containerSelector = 'viewer__logo';
-		this.template = 'http://localhost:8080/viewer/template/logo.html';
+		this.template = 'template/logo.html';
 		this.dependencies = [{
 			type: 'css',
-			url: 'http://localhost:8080/viewer/style/logo.css'
+			url: 'style/logo.css'
 		}];
 		this.logoURL = '';
 		this.logoSelector = 'viewer__logo-img';

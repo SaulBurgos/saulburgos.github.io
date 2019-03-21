@@ -8,10 +8,10 @@ export class HotspotImageGallery extends Aggregation(Hotspot,Modal)  {
 	constructor() {
 		super();
 		this.type = 'imageGallery';	 
-		this.template = "http://localhost:8080/viewer/template/imageGallery.html";
+		this.template = "template/imageGallery.html";
 		this.dependencies = [{
 			type: 'css',
-			url: 'http://localhost:8080/viewer/style/imageGallery.css'
+			url: 'style/imageGallery.css'
 			}
 		];
         this.containerSelector = "imageGallery_Container";

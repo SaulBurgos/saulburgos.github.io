@@ -24,14 +24,14 @@ export class FloorPlanMap extends Aggregation(ViewPanel) {
 		this.openIcon.setAttribute('aria-hidden', `true`);
 		this.openButton.appendChild(this.openIcon);
 
-		this.template = 'http://localhost:8080/viewer/template/floorPlanMap.html';
+		this.template = 'template/floorPlanMap.html';
 		this.dependencies = [{
 				type: 'css',
-				url: 'http://localhost:8080/viewer/style/floorPlan.css'
+				url: 'style/floorPlan.css'
 			},
 			{
 				type: 'css',
-				url: 'http://localhost:8080/viewer/style/floorPlanMap.css'
+				url: 'style/floorPlanMap.css'
 			}
 		];
 

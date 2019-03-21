@@ -7,27 +7,27 @@ export class FloorPlanImage extends Aggregation(ViewPanel) {
     super();
     this.type = 'floorPlanImage';
     this.containerSelector = 'viewer__floor-plan';
-    this.template = 'http://localhost:8080/viewer/template/floorPlanImage.html';
+    this.template = 'template/floorPlanImage.html';
     this.dependencies = [
       {
         type: 'css',
-        url: 'http://localhost:8080/viewer/style/floorPlanImage.css'
+        url: 'style/floorPlanImage.css'
       },
       {
         type: 'css',
-        url: 'http://localhost:8080/viewer/libs/photoswipe_411/photoswipe.css'
+        url: 'libs/photoswipe_411/photoswipe.css'
       },
       {
         type: 'css',
-        url: 'http://localhost:8080/viewer/libs/photoswipe_411/default-skin/default-skin.css'
+        url: 'libs/photoswipe_411/default-skin/default-skin.css'
       },
       {
         type: 'js',
-        url: 'http://localhost:8080/viewer/libs/photoswipe_411/photoswipe.ooqia.min.js'
+        url: 'libs/photoswipe_411/photoswipe.ooqia.min.js'
       },
       {
         type: 'js',
-        url: 'http://localhost:8080/viewer/libs/photoswipe_411/photoswipe-ui-default.min.js'
+        url: 'libs/photoswipe_411/photoswipe-ui-default.min.js'
       },
     ];
 

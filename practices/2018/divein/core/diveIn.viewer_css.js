@@ -9,7 +9,7 @@ let ooqiaStory = new diveIn.Story({
 	scenes: [{
 		id: 101,
 		name: 'Parking',
-		imgUrl: 'http://localhost:8080/viewer/assets/ooqia_parking.jpg',
+		imgUrl: 'assets/ooqia_parking.jpg',
 		north: {
 			x: 0,
 			y: -60,
@@ -29,20 +29,20 @@ let ooqiaStory = new diveIn.Story({
 			width: 1,
 			height: 0.6,
 			options: {						
-				imgUrl: 'http://localhost:8080/viewer/assets/ooqia_oficial.png'
+				imgUrl: 'assets/ooqia_oficial.png'
 			},
 		}]
 	},
 	{
 		id: 102,
 		name: 'Lobby',
-		imgUrl: 'http://localhost:8080/viewer/assets/ooqia_lobby.jpg',
+		imgUrl: 'assets/ooqia_lobby.jpg',
 		hotspots: []
 	},
 	{
 		id: 103,
 		name: 'Pool',
-		imgUrl: 'http://localhost:8080/viewer/assets/ooqia_pool.jpg',
+		imgUrl: 'assets/ooqia_pool.jpg',
 		hotspots: []
 	}]
 });

@@ -7,10 +7,10 @@ export class FullScreen extends Aggregation(ViewPanel) {
 		super();
 		this.type = 'fullscreen';
 		this.containerSelector = 'viewer__fullscreen';
-		this.template = 'http://localhost:8080/viewer/template/fullscreen.html';
+		this.template = 'template/fullscreen.html';
         this.dependencies = [{
 			type: 'css',
-			url: 'http://localhost:8080/viewer/style/fullscreen.css'
+			url: 'style/fullscreen.css'
         }];
         this.optionSelector = "js-viewer__fullscreen";
         this.activeClass = 'viewer__fullscreen--active';

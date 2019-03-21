@@ -13,12 +13,12 @@ export class Description extends Aggregation(ViewPanel, Modal) {
 
     // ViewPanel
     this.containerSelector = 'viewer__description';
-    this.template = 'http://localhost:8080/viewer/template/description.html';
-    this.contentTemplate = 'http://localhost:8080/viewer/template/descriptionContent.html';
+    this.template = 'template/description.html';
+    this.contentTemplate = 'template/descriptionContent.html';
 
     this.dependencies = [{
       type: 'css',
-      url: 'http://localhost:8080/viewer/style/description.css'
+      url: 'style/description.css'
     }];
 
     this.iconSelector = '.js-viewer__description-icon';

@@ -8,10 +8,10 @@ export class HotspotExternalVideo extends Aggregation(Hotspot,Modal)  {
 	constructor() {
 		super();
 		this.type = 'externalVideo';	 
-		this.template = "http://localhost:8080/viewer/template/externalVideo.html";
+		this.template = "template/externalVideo.html";
 		this.dependencies = [{
 			type: 'css',
-			url: 'http://localhost:8080/viewer/style/externalVideo.css'
+			url: 'style/externalVideo.css'
 			}
 		];
         this.containerSelector = "externalVideo_Container";

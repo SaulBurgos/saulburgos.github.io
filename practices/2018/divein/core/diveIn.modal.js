@@ -5,7 +5,7 @@ export class Modal {
     this.CLOSE_CLASS = 'main-overlay__close';
     this.BODY_CLASS = 'main-overlay__body';
 
-    this.modalTemplate = 'http://localhost:8080/viewer/template/modalOverlay.html';
+    this.modalTemplate = 'template/modalOverlay.html';
     this.modalElement = null;
     this.overlaySelector = null;
   }

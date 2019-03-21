@@ -18,10 +18,10 @@ export class Outline extends Aggregation(ViewPanel) {
 		this.scenesSelector = 'outline-content';
 		this.singleSceneSelector = 'outline-content__scene';
 
-		this.template = 'http://localhost:8080/viewer/template/outline.html';
+		this.template = 'template/outline.html';
 		this.dependencies = [{
 			type: 'css',
-			url: 'http://localhost:8080/viewer/style/outline.css'
+			url: 'style/outline.css'
 		}];
 	}
 

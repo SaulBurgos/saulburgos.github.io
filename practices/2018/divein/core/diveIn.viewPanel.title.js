@@ -12,10 +12,10 @@ export class Title extends Aggregation(ViewPanel) {
 		//this.container = jQuery(`<div class="${ this.containerSelector } zIndex--2 overContent overContent--topCenter"></div>`);
 		// this.container = document.createElement('div');
 		// this.container.setAttribute('class', `${ this.containerSelector } zIndex--2 overContent overContent--topCenter`);
-		this.template = 'http://localhost:8080/viewer/template/title.html';
+		this.template = 'template/title.html';
 		this.dependencies = [{
 			type: 'css',
-			url: 'http://localhost:8080/viewer/style/title.css'
+			url: 'style/title.css'
 		}];
 		this.title = '';
 		this.secondaryTitle = '';

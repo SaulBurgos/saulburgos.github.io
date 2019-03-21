@@ -11,12 +11,12 @@ export class Share extends Aggregation(ViewPanel, Modal) {
     super();
 
     this.containerSelector = 'viewer__share';
-    this.template = 'http://localhost:8080/viewer/template/share.html';
-    this.contentTemplate = 'http://localhost:8080/viewer/template/shareContent.html';
+    this.template = 'template/share.html';
+    this.contentTemplate = 'template/shareContent.html';
 
     this.dependencies = [{
       type: 'css',
-      url: 'http://localhost:8080/viewer/style/share.css'
+      url: 'style/share.css'
     }];
 
     this.iconSelector = '.js-viewer__share-icon';

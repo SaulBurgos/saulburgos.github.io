@@ -11,10 +11,10 @@ export class Counter extends Aggregation(ViewPanel) {
 		this.container = document.createElement('div');
 		this.container.setAttribute('class', `${this.containerSelector} zIndex--2 overContent overContent--topRight`)
 		this.counterSelector = 'counterContainer_label';
-		this.template = 'http://localhost:8080/viewer/template/counter.html';
+		this.template = 'template/counter.html';
 		this.dependencies = [{
 			type: 'css',
-			url: 'http://localhost:8080/viewer/style/counter.css'
+			url: 'style/counter.css'
 		}];
 		this.clickedHotspots = 0;
 		this.totalHotspots = 0;

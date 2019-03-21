@@ -8,10 +8,10 @@ export class HotspotHTMLContent extends Aggregation(Hotspot,Modal)  {
 	constructor() {
 		super();
 		this.type = 'HTMLContent';	 
-		this.template = "http://localhost:8080/viewer/template/HTMLContent.html";
+		this.template = "template/HTMLContent.html";
 		this.dependencies = [{
 			type: 'css',
-			url: 'http://localhost:8080/viewer/style/HTMLContent.css'
+			url: 'viewer/style/HTMLContent.css'
 			}
 		];
 		this.content;
