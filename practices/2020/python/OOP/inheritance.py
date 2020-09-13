@@ -9,8 +9,6 @@ class Rectangulo:
         return self.base * self.altura
 
 # you inherit passing the super class
-
-
 class Cuadrado(Rectangulo):
 
     def __init__(self, lado):
