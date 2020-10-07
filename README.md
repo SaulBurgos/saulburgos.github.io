@@ -15,6 +15,7 @@ Projects links
 -------------
 
 - [Okistory](https://saulburgos.github.io/projects/okistory/index.html)
+- [Canal](https://saulburgos.github.io/projects/canal/)
 
 Practice links
 -------------
