@@ -162,18 +162,20 @@ var canalApp = new function() {
                '</a>';
 
    this.timeLine = {
-   	news2014: '<iframe src="http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0Aq3IfOduqCJudGVHR29CNnptUkdRblRaNmI4dWo3VVE&font=Bevan-PotanoSans&maptype=toner&lang=es&start_at_end=true&debug=true&height=630"' + 
+   	news2014: '<iframe src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=0Aq3IfOduqCJudGVHR29CNnptUkdRblRaNmI4dWo3VVE&font=Bevan-PotanoSans&maptype=toner&lang=es&start_at_end=true&debug=true&height=630"' + 
 		  ' width="100%" height="100%" frameborder="0"></iframe>',
-		news2015: '<iframe src="http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0Aq3IfOduqCJudE85cHlyNjB5bkJqMHFEamdSVVk0b1E&font=Bevan-PotanoSans&maptype=toner&lang=es&start_at_end=true&debug=true&height=630"' + 
+		news2015: '<iframe src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=0Aq3IfOduqCJudE85cHlyNjB5bkJqMHFEamdSVVk0b1E&font=Bevan-PotanoSans&maptype=toner&lang=es&start_at_end=true&debug=true&height=630"' + 
 		  ' width="100%" height="100%" frameborder="0"></iframe>',
-	  	news2016: '<iframe src="http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=1UqQzBWEbmSfAdxuKKxoJdWzALjT7ldaKbPdbX-nOMsw&font=Bevan-PotanoSans&maptype=toner&lang=es&start_at_end=true&debug=true&height=630"' + 
+	  	news2016: '<iframe src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1UqQzBWEbmSfAdxuKKxoJdWzALjT7ldaKbPdbX-nOMsw&font=Bevan-PotanoSans&maptype=toner&lang=es&start_at_end=true&debug=true&height=630"' + 
 		  ' width="100%" height="100%" frameborder="0"></iframe>',
-	  	news2017: '<iframe src="http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=1uZs3Tpt6TE-n_WganOf9QFJT_baZBM850RgR0sTnIGo&font=Bevan-PotanoSans&maptype=toner&lang=es&start_at_end=true&debug=true&height=630"' + 
+	  	news2017: '<iframe src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1uZs3Tpt6TE-n_WganOf9QFJT_baZBM850RgR0sTnIGo&font=Bevan-PotanoSans&maptype=toner&lang=es&start_at_end=true&debug=true&height=630"' + 
 		  ' width="100%" height="100%" frameborder="0"></iframe>'
 		  
-   };
+	};
+	
+	
 
-/*<iframe src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0Aq3IfOduqCJudE85cHlyNjB5bkJqMHFEamdSVVk0b1E&font=Bevan-PotanoSans&maptype=toner&lang=en&height=650' width='100%' height='650' frameborder='0'></iframe>*/
+
 			
 	this.init = function () {
 
