@@ -1,9 +1,0 @@
-User-agent: *
-Disallow: /php/
-Disallow: /css/
-Disallow: /js/
-Disallow: /plantilla/
-Disallow: /css/
-Disallow: /logs/
-Disallow: e404.html
-sitemap: http://www.mapainmobiliario.net/sitemap.xml
