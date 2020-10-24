@@ -15,6 +15,9 @@ import { AppComponent } from './app.component';
   ],
   providers: [],
   bootstrap: [],
+  //For exposing an Angular Component as a Custom Element, we need to declare it and put it
+  //into the entryComponents section of a module. This is necessary because Angular Elements
+  //is creating it dynamically at runtime
   entryComponents: [
     AppComponent
   ],

@@ -1,0 +1,8 @@
+.guideLine {
+  border: 1px dashed green;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
