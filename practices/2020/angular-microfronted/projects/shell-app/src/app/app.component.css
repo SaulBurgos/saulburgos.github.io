@@ -1,0 +1,29 @@
+.shellApp {
+  width: 99vw;
+  height: 99vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header {
+  width: 100%;
+  height: 25%;
+}
+
+.body {
+  width: 79%;
+  height: 65%;
+}
+
+.sidebar {
+  width: 20%;
+}
+
+.footer {
+  width: 100%;
+  height: 10%;
+}
+
+.guideLine {
+  border: 1px dashed blue;
+}
