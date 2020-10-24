@@ -1,0 +1,19 @@
+.guideLine {
+  border: 1px dashed green;
+  width: 150px;
+  height: 300px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
+
+.menuItem {
+  width: 100%;
+}

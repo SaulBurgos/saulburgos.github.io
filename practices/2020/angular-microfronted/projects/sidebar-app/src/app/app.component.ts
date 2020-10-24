@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  //I'm not using a selector because the Custom Element gets one assigned when it is registered. This way, I'm preventing naming conflicts.
+  //selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class AppComponent {
-  title = 'sidebarApp';
+  @Input() articles: Array<any> = [
+    'introduction',
+    'How to',
+    'intermediate',
+    'Advance'
+  ];
 }
