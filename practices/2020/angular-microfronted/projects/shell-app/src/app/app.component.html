@@ -1,15 +1,17 @@
 <div class="shellApp guideLine">
-  <div class="header guideLine">
-    header
+  <div id="header" class="header guideLine">
+    <header-app title="{{ title }}"></header-app>
+    <input type="text" [(ngModel)]="title">
   </div>
   <div class="body guideLine">
-    body
+    <body-app title="{{ bodyApp.title }}" message="{{ bodyApp.message }}"></body-app>
+
   </div>
   <div class="sidebar guideLine">
-    sidebar
+    <side-app [(articles)]="articles"></side-app>
   </div>
   <div class="footer guideLine">
-    footer
+    <footer-app [(menu)]="menu"></footer-app>
   </div>
 <div>
 
