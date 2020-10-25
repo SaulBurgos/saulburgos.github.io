@@ -1,7 +1,7 @@
 
 <div class="guideLine">
   <ul class="menu">
-    <li *ngFor="let item of articles;" class="menuItem">
+    <li *ngFor="let item of articles;" class="menuItem" (click)="onItemClicked(item)">
       {{ item }}
     </li>
   </ul>

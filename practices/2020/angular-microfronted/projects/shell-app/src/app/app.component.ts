@@ -50,11 +50,30 @@ export class AppComponent implements OnInit, AfterViewInit  {
     //footerScript.src = 'components/footerApp/main.js';
     footerScript.src = 'http://localhost:8080/footerApp/main.js';
     document.body.appendChild(footerScript);
+
+
+    /****listen events */
+    const sidebar = document.getElementById('sidebar');
+    // register a event handler named 'highlight'
+    sidebar.addEventListener('sidebarEvents', function(event) {
+      console.log(event);
+    });
+
+  }
+
+  triggerEventOnSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.dispatchEvent(new CustomEvent('sidebarActions', {
+      bubbles: false,
+      detail: {
+        actionName: 'sayHello',
+        payload: {
+          foo: 'bar'
+        }
+      }
+    }));
   }
 
   ngAfterViewInit() {
-
-
-
   }
 }
