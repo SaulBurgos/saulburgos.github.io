@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    // listen event #2
+    // listen event #2, be sure to removeListener on ngdestroy
     this.elementRef.nativeElement.addEventListener('sidebarActions', (event) => {
       console.log(`Sidebar: Event recieved`);
       console.log(event);
