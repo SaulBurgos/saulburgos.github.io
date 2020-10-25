@@ -4,6 +4,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, Injector } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { createCustomElement } from '@angular/elements';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { createCustomElement } from '@angular/elements';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [],
