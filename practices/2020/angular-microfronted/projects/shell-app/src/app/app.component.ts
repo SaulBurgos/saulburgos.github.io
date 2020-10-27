@@ -27,37 +27,44 @@ export class AppComponent implements OnInit, AfterViewInit  {
     'shell menu 4'
   ];
 
+  components = {
+    headerUrl: 'http://localhost:8080/headerApp/main.js',
+    bodyUrl: 'http://localhost:8080/bodyApp/main.js',
+    sidebarUrl: 'http://localhost:8080/sidebarApp/main.js',
+    footerUrl: 'http://localhost:8080/footerApp/main.js'
+  };
+
   constructor() {
 
   }
 
   ngOnInit() {
-    const headerScript = document.createElement('script');
+    //const headerScript = document.createElement('script');
     //headerScript.src = 'components/headerApp/main.js';
-    headerScript.src = 'http://localhost:8080/headerApp/main.js';
-    document.body.appendChild(headerScript);
+    // headerScript.src = 'http://localhost:8080/headerApp/main.js';
+    // document.body.appendChild(headerScript);
 
-    const bodyScript = document.createElement('script');
-    bodyScript.src = 'http://localhost:8080/bodyApp/main.js';
-    document.body.appendChild(bodyScript);
+    // const bodyScript = document.createElement('script');
+    // bodyScript.src = 'http://localhost:8080/bodyApp/main.js';
+    // document.body.appendChild(bodyScript);
 
-    const sidebarScript: any = document.createElement('script');
+    //const sidebarScript: any = document.createElement('script');
     //sidebarScript.src = 'components/sidebarApp/main.js';
-    sidebarScript.src = 'http://localhost:8080/sidebarApp/main.js';
-    document.body.appendChild(sidebarScript);
+    // sidebarScript.src = 'http://localhost:8080/sidebarApp/main.js';
+    // document.body.appendChild(sidebarScript);
 
-    const footerScript = document.createElement('script');
+    //const footerScript = document.createElement('script');
     //footerScript.src = 'components/footerApp/main.js';
-    footerScript.src = 'http://localhost:8080/footerApp/main.js';
-    document.body.appendChild(footerScript);
+    // footerScript.src = 'http://localhost:8080/footerApp/main.js';
+    // document.body.appendChild(footerScript);
 
 
     /****listen events */
-    const sidebar = document.getElementById('sidebar');
-    // register a event handler named 'highlight'
-    sidebar.addEventListener('sidebarEvents', function(event) {
-      console.log(event);
-    });
+    // const sidebar = document.getElementById('sidebar');
+    // // register a event handler named 'highlight'
+    // sidebar.addEventListener('sidebarEvents', function(event) {
+    //   console.log(event);
+    // });
 
   }
 

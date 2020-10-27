@@ -1,18 +1,19 @@
 <div class="shellApp guideLine">
   <div id="header" class="header guideLine">
-    <header-app title="{{ title }}"></header-app>
+
+    <header-app *axLazyElement="components.headerUrl" [title]="title"></header-app>
+
     <input type="text" [(ngModel)]="title">
     <button (click)="triggerEventOnSidebar()">Trigger Event on sidebar</button>
   </div>
   <div class="body guideLine">
-    <body-app title="{{ bodyApp.title }}" message="{{ bodyApp.message }}"></body-app>
-
+    <body-app *axLazyElement="components.bodyUrl" [title]="bodyApp.title" [message]="bodyApp.message"></body-app>
   </div>
   <div class="sidebar guideLine">
-    <side-app id="sidebar" [(articles)]="articles"></side-app>
+    <side-app *axLazyElement="components.sidebarUrl" [articles]="articles"></side-app>
   </div>
   <div class="footer guideLine">
-    <footer-app [(menu)]="menu"></footer-app>
+    <footer-app *axLazyElement="components.footerUrl" [menu]="menu"></footer-app>
   </div>
 <div>
 
