@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, Input, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, Input, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -6,12 +6,13 @@ import { HttpClient } from '@angular/common/http';
   //selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  encapsulation: ViewEncapsulation.ShadowDom,
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
   @Input() title: string = 'default Header App';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private ref: ChangeDetectorRef) {
 
   }
 
@@ -22,5 +23,8 @@ export class AppComponent implements OnInit {
     });
   };
 
+  // detectChanges() {
+  //   this.ref.detectChanges();
+  // }
 
 }

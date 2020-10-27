@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { createCustomElement } from '@angular/elements';
 import { HttpClientModule } from '@angular/common/http';
 
+//https://angular-extensions.github.io/elements/#/docs/change-detection
+//https://github.com/angular/zone.js/blob/master/NON-STANDARD-APIS.md
+import  'zone.js/dist/zone-patch-rxjs';
+
 @NgModule({
   declarations: [
     AppComponent

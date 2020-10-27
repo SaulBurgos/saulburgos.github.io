@@ -1,11 +1,12 @@
-import { Component, ViewEncapsulation, Input, EventEmitter, Output, HostListener, OnInit, ElementRef} from '@angular/core';
+import { Component, ViewEncapsulation, Input, EventEmitter, Output, HostListener, OnInit, ElementRef, ChangeDetectorRef, ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
   //I'm not using a selector because the Custom Element gets one assigned when it is registered. This way, I'm preventing naming conflicts.
   //selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  encapsulation: ViewEncapsulation.ShadowDom,
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
   @Output() sidebarEvents = new EventEmitter();
@@ -22,7 +23,7 @@ export class AppComponent implements OnInit {
   //   console.log(event);
   // };
 
-  constructor(private elementRef: ElementRef) {
+  constructor(private elementRef: ElementRef,private ref: ChangeDetectorRef) {
 
   }
 
@@ -40,4 +41,8 @@ export class AppComponent implements OnInit {
       payload: item
     })
   };
+
+  // detectChanges() {
+  //   this.ref.detectChanges();
+  // }
 }

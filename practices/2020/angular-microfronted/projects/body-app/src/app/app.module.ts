@@ -5,6 +5,10 @@ import { createCustomElement } from '@angular/elements';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+//https://angular-extensions.github.io/elements/#/docs/change-detection
+//https://github.com/angular/zone.js/blob/master/NON-STANDARD-APIS.md
+import  'zone.js/dist/zone-patch-rxjs';
+
 @NgModule({
   declarations: [
     AppComponent
