@@ -10,7 +10,7 @@
     <body-app *axLazyElement="components.bodyUrl;loadingTemplate: loading;" [title]="bodyApp.title" [message]="bodyApp.message"></body-app>
   </div>
   <div class="sidebar guideLine">
-    <side-app *axLazyElement="components.sidebarUrl;loadingTemplate: loading;" [articles]="articles" (sidebarEvents)="onSidebarEvents($event)"></side-app>
+    <side-app id="sidebar" *axLazyElement="components.sidebarUrl;loadingTemplate: loading;" [articles]="articles" (sidebarEvents)="onSidebarEvents($event)"></side-app>
   </div>
   <div class="footer guideLine">
     <footer-app *axLazyElement="components.footerUrl;loadingTemplate: loading;" [menu]="menu"></footer-app>
