@@ -68,6 +68,10 @@ export class AppComponent implements OnInit, AfterViewInit  {
 
   }
 
+  onSidebarEvents(event) {
+    console.log(event);
+  }
+
   triggerEventOnSidebar() {
     const sidebar = document.getElementById('sidebar');
     sidebar.dispatchEvent(new CustomEvent('sidebarActions', {
